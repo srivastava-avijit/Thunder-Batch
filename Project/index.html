@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSVerse — Learn JavaScript the Fun Way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="star-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">JS<em>VERSE</em></div>
+  <div class="nav-pill">
+    <a href="#progress">Progress</a>
+    <a href="#topics">Topics</a>
+    <a href="#about">About</a>
+  </div>
+  <div class="nav-right">
+    <span>v1.0 · hackathon</span>
+    <span class="blinker"></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">🚀 &nbsp;Live Learning Journal · Updated Continuously</div>
+  <h1>
+    <span class="js-word">JS</span>
+    <span class="verse-word">VERSE</span>
+  </h1>
+  <p class="hero-desc">
+    One developer's honest journey through JavaScript — documented with <strong>real examples</strong>, funny memes, and zero boring slides.
+  </p>
+
+  <div class="hero-terminal">
+    <div class="terminal-bar">
+      <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+      <div class="terminal-filename">jsverse.js · main</div>
+    </div>
+    <div class="terminal-body">
+      <div><span class="t-dim">// my learning so far</span></div>
+      <div><span class="t-green">const</span> <span class="t-cyan">learned</span> <span class="t-dim">=</span> [<span class="t-yellow">"why JS"</span>, <span class="t-yellow">"data types"</span>, <span class="t-yellow">"operators"</span>,</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-yellow">"math"</span>, <span class="t-yellow">"strings"</span>, <span class="t-yellow">"loops"</span>];</div>
+      <div><span class="t-green">const</span> <span class="t-cyan">coming_soon</span> <span class="t-dim">=</span> [<span class="t-orange">"arrays"</span>, <span class="t-orange">"objects"</span>, <span class="t-orange">"async"</span>];</div>
+      <div><span class="t-dim">// teaching what I know, growing every day</span></div>
+      <div><span class="t-pink">console</span>.<span class="t-cyan">log</span>(<span class="t-yellow">"let's learn together 🤝"</span>);</div>
+    </div>
+  </div>
+
+  <div class="hero-badges">
+    <span class="badge badge-yellow">6 topics mastered</span>
+    <span class="badge badge-cyan">5 topics incoming</span>
+    <span class="badge badge-green">100% meme-powered</span>
+    <span class="badge badge-orange">0 boring slides</span>
+  </div>
+</section>
+
+<!-- 3D CUBE -->
+<div class="cube-wrap">
+  <div class="scene3d">
+    <div class="cube3d">
+      <div class="face3d fr">JS</div>
+      <div class="face3d bk">🔥</div>
+      <div class="face3d lf">{}</div>
+      <div class="face3d rt">[]</div>
+      <div class="face3d tp">⚡</div>
+      <div class="face3d bt">🚀</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<section id="progress">
+  <div class="progress-section">
+    <div class="section-eyebrow">// my_progress.log</div>
+    <h2 class="section-h2">WHERE I'M AT</h2>
+    <p class="section-sub">Honest real-time tracker. No fake confidence — just actual learning.</p>
+
+    <div class="prog-grid" id="prog-grid">
+      <div class="prog-item">
+        <div class="prog-name">why_javascript</div>
+        <div class="prog-track"><div class="prog-fill fill-done" data-w="100"></div></div>
+        <div class="prog-pct">100%</div>
+        <div class="prog-tag tag-done">DONE</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">data_types</div>
+        <div class="prog-track"><div class="prog-fill fill-done" data-w="100"></div></div>
+        <div class="prog-pct">100%</div>
+        <div class="prog-tag tag-done">DONE</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">operators</div>
+        <div class="prog-track"><div class="prog-fill fill-done" data-w="100"></div></div>
+        <div class="prog-pct">100%</div>
+        <div class="prog-tag tag-done">DONE</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">math_functions</div>
+        <div class="prog-track"><div class="prog-fill fill-done" data-w="100"></div></div>
+        <div class="prog-pct">100%</div>
+        <div class="prog-tag tag-done">DONE</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">strings_basics</div>
+        <div class="prog-track"><div class="prog-fill fill-done" data-w="100"></div></div>
+        <div class="prog-pct">100%</div>
+        <div class="prog-tag tag-done">DONE</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">if_else_loops</div>
+        <div class="prog-track"><div class="prog-fill fill-done" data-w="100"></div></div>
+        <div class="prog-pct">100%</div>
+        <div class="prog-tag tag-done">DONE</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">arrays_objects</div>
+        <div class="prog-track"><div class="prog-fill fill-todo" data-w="0"></div></div>
+        <div class="prog-pct">—</div>
+        <div class="prog-tag tag-lock">LOCKED</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">advanced_loops</div>
+        <div class="prog-track"><div class="prog-fill fill-todo" data-w="0"></div></div>
+        <div class="prog-pct">—</div>
+        <div class="prog-tag tag-lock">LOCKED</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">events_dom</div>
+        <div class="prog-track"><div class="prog-fill fill-todo" data-w="0"></div></div>
+        <div class="prog-pct">—</div>
+        <div class="prog-tag tag-lock">LOCKED</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-name">async_promises</div>
+        <div class="prog-track"><div class="prog-fill fill-todo" data-w="0"></div></div>
+        <div class="prog-pct">—</div>
+        <div class="prog-tag tag-lock">LOCKED</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="topics-section">
+    <div class="section-eyebrow">// topics[]</div>
+    <h2 class="section-h2">WHAT I'VE LEARNED</h2>
+    <p class="section-sub" style="margin-bottom:2.5rem">Click any card to expand. Rich content, real examples, and memes guaranteed.</p>
+
+<!-- ═══════════ CARD 1: WHY JS ═══════════ -->
+<div class="topic-card">
+  <div class="card-top-bar" style="background:linear-gradient(90deg,var(--yellow),var(--orange))"></div>
+  <div class="card-trigger" onclick="toggleCard(this)">
+    <div class="card-number">01</div>
+    <div class="card-emoji">🌍</div>
+    <div class="card-info">
+      <div class="card-title">Why JavaScript?</div>
+      <div class="card-subtitle">The "why are we even here" question — answered clearly</div>
+    </div>
+    <div class="card-status cs-done">✓ LEARNED</div>
+    <div class="card-chevron">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-content">
+
+      <div class="c-section">
+        <div class="c-heading">What is JavaScript?</div>
+        <div class="c-text">
+          <p>JavaScript is a <strong>programming language that runs inside your browser</strong> — no installation needed. It was created in 1995 by Brendan Eich at Netscape in just <strong>10 days</strong>. Ten. Days. Which explains why it has some… personality quirks.</p>
+          <p>It started as a tiny browser tool, but today it's everywhere — websites, servers, mobile apps, games, even AI tools. If software is the nervous system of the internet, JavaScript is the electricity running through it.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">The Classic Analogy</div>
+        <div class="info-row cols-3">
+          <div class="info-box">
+            <div class="ib-label">🧱 HTML</div>
+            <div class="ib-val">Structure</div>
+            <div class="ib-desc">The skeleton. Headings, paragraphs, buttons — the raw bones of any webpage.</div>
+          </div>
+          <div class="info-box">
+            <div class="ib-label">🎨 CSS</div>
+            <div class="ib-val">Style</div>
+            <div class="ib-desc">Clothes and makeup. Colors, fonts, shadows, animations that make things look good.</div>
+          </div>
+          <div class="info-box">
+            <div class="ib-label">⚡ JavaScript</div>
+            <div class="ib-val">Behaviour</div>
+            <div class="ib-desc">The brain and muscles. Makes things click, respond, fetch data, and come alive.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">What JavaScript can actually do</div>
+        <div class="c-text">
+          <p><strong>In the browser (frontend):</strong> Respond to button clicks, validate forms, fetch live data from APIs without refreshing the page, animate elements, build complete apps like Gmail, Google Maps, or Netflix.</p>
+          <p><strong>On the server (Node.js):</strong> Handle web requests, talk to databases, build REST APIs — the same language, front AND back.</p>
+          <p><strong>Everywhere else:</strong> Mobile apps (React Native), desktop apps (Electron — yes, VS Code is built in JS!), IoT devices, 3D games in the browser (Three.js), machine learning (TensorFlow.js).</p>
+        </div>
+        <div class="code-wrap">
+          <div class="code-bar"><div class="code-bar-dots"><span class="cbar-r"></span><span class="cbar-y"></span><span class="cbar-g"></span></div><div class="code-fname">browser-demo.js</div></div>
+          <pre class="code"><span class="cm">// 1. Make a button do something</span>
+<span class="vr">document</span>.<span class="fn">getElementById</span>(<span class="st">"myBtn"</span>).<span class="fn">addEventListener</span>(<span class="st">"click"</span>, () => {
+  <span class="fn">alert</span>(<span class="st">"Button works! Welcome to JS 🎉"</span>);
+});
+
+<span class="cm">// 2. Update page content live (no reload!)</span>
+<span class="vr">document</span>.<span class="fn">getElementById</span>(<span class="st">"score"</span>).textContent = <span class="st">"New Score: 9001"</span>;
+
+<span class="cm">// 3. Fetch live data from an API</span>
+<span class="fn">fetch</span>(<span class="st">"https://api.example.com/data"</span>)
+  .<span class="fn">then</span>(<span class="vr">res</span> => <span class="vr">res</span>.<span class="fn">json</span>())
+  .<span class="fn">then</span>(<span class="vr">data</span> => <span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">data</span>));
+
+<span class="cm">// 4. Validate a form before submitting</span>
+<span class="kw">function</span> <span class="fn">isValidEmail</span>(<span class="vr">email</span>) {
+  <span class="kw">return</span> <span class="vr">email</span>.<span class="fn">includes</span>(<span class="st">"@"</span>) && <span class="vr">email</span>.<span class="fn">includes</span>(<span class="st">"."</span>);
+}</pre>
+        </div>
+      </div>
+
+      <div class="callout meme">
+        <div class="callout-icon">😂</div>
+        <div class="callout-content">
+          <strong>Relatable dev moment</strong>
+          <p>Me: "I'll just add a tiny bit of JavaScript to this page."<br>Me 6 months later: Full-stack app, 3 databases, Docker containers, WebSocket connections, and a custom CLI tool.<br>JavaScript: <code>"yes. more. always more."</code></p>
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <strong>Fun fact — The naming lie</strong>
+          <p>JavaScript has NOTHING to do with Java. The name was a 1995 marketing trick — Java was hyped, so Netscape renamed their language to piggyback on the hype. Brendan Eich was reportedly unhappy about this. Developers have been explaining it ever since. Same as Jaguars and Jaguars — same name, totally different animals.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CARD 2: DATA TYPES ═══════════ -->
+<div class="topic-card">
+  <div class="card-top-bar" style="background:linear-gradient(90deg,var(--cyan),var(--purple))"></div>
+  <div class="card-trigger" onclick="toggleCard(this)">
+    <div class="card-number">02</div>
+    <div class="card-emoji">🧬</div>
+    <div class="card-info">
+      <div class="card-title">Data Types in JavaScript</div>
+      <div class="card-subtitle">The 8 types of data JS can hold — including the cursed ones</div>
+    </div>
+    <div class="card-status cs-done">✓ LEARNED</div>
+    <div class="card-chevron">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-content">
+
+      <div class="c-section">
+        <div class="c-heading">Two Big Categories</div>
+        <div class="c-text">
+          <p>JS has two fundamental categories: <strong>Primitive types</strong> store an actual value directly. <strong>Reference types</strong> (like Objects and Arrays) store a memory address pointing to where the data lives. This difference looks boring but causes some of the sneakiest bugs you'll ever face.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">The 7 Primitive Types</div>
+        <div class="code-wrap">
+          <div class="code-bar"><div class="code-bar-dots"><span class="cbar-r"></span><span class="cbar-y"></span><span class="cbar-g"></span></div><div class="code-fname">primitives.js</div></div>
+          <pre class="code"><span class="cm">// 1. STRING — any text in quotes (single, double, or backtick)</span>
+<span class="kw">let</span> <span class="vr">name</span>     = <span class="st">"Ravi"</span>;
+<span class="kw">let</span> <span class="vr">greeting</span> = <span class="st">'Hello world!'</span>;
+<span class="kw">let</span> <span class="vr">template</span> = <span class="st">`Hi, I am ${<span class="vr">name</span>}`</span>;    <span class="cm">// backtick = template literal ✨</span>
+
+<span class="cm">// 2. NUMBER — integers AND decimals. JS doesn't separate them</span>
+<span class="kw">let</span> <span class="vr">age</span>   = <span class="nm">21</span>;
+<span class="kw">let</span> <span class="vr">price</span> = <span class="nm">9.99</span>;
+<span class="kw">let</span> <span class="vr">neg</span>   = <span class="op">-</span><span class="nm">100</span>;
+<span class="kw">let</span> <span class="vr">inf</span>   = <span class="cl">Infinity</span>;      <span class="cm">// valid number! 1/0 gives this</span>
+<span class="kw">let</span> <span class="vr">bad</span>   = <span class="cl">NaN</span>;           <span class="cm">// "Not a Number" — typeof NaN === "number" 🤡</span>
+
+<span class="cm">// 3. BOOLEAN — only true or false</span>
+<span class="kw">let</span> <span class="vr">isLoggedIn</span> = <span class="bl">true</span>;
+<span class="kw">let</span> <span class="vr">hasBalance</span> = <span class="bl">false</span>;
+
+<span class="cm">// 4. NULL — intentional empty value (you chose to leave it empty)</span>
+<span class="kw">let</span> <span class="vr">selectedProduct</span> = <span class="bl">null</span>;   <span class="cm">// "nothing selected yet"</span>
+
+<span class="cm">// 5. UNDEFINED — variable declared but never assigned a value</span>
+<span class="kw">let</span> <span class="vr">score</span>;
+<span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">score</span>);              <span class="cm">// undefined</span>
+
+<span class="cm">// 6. BIGINT — for numbers too huge for the Number type</span>
+<span class="kw">let</span> <span class="vr">bigNum</span> = <span class="nm">9007199254740991n</span>;   <span class="cm">// note the "n" suffix</span>
+
+<span class="cm">// 7. SYMBOL — a guaranteed unique value (used in advanced code)</span>
+<span class="kw">let</span> <span class="vr">id1</span> = <span class="cl">Symbol</span>(<span class="st">"id"</span>);
+<span class="kw">let</span> <span class="vr">id2</span> = <span class="cl">Symbol</span>(<span class="st">"id"</span>);
+<span class="vr">id1</span> <span class="op">===</span> <span class="vr">id2</span>    <span class="cm">// false — every Symbol is UNIQUE, even with same label!</span></pre>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">The Reference Bug Everyone Falls For</div>
+        <div class="c-text"><p>Objects and arrays are <strong>reference types</strong> — assigning them to a new variable doesn't copy the data, it copies the memory address. Both variables now point to the same thing.</p></div>
+        <pre class="code solo"><span class="cm">// ⚠️ THE SNEAKY REFERENCE COPY BUG</span>
+<span class="kw">let</span> <span class="vr">a</span> = { <span class="pp">x</span>: <span class="nm">1</span> };
+<span class="kw">let</span> <span class="vr">b</span> = <span class="vr">a</span>;            <span class="cm">// b doesn't copy a — it points to the SAME object!</span>
+<span class="vr">b</span>.<span class="pp">x</span> = <span class="nm">999</span>;
+<span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">a</span>.<span class="pp">x</span>);    <span class="cm">// 999 😱 — changing b changed a too!</span>
+
+<span class="cm">// ✅ Fix: use spread to create a real copy</span>
+<span class="kw">let</span> <span class="vr">c</span> = { ...<span class="vr">a</span> };     <span class="cm">// c is its own object now</span>
+<span class="vr">c</span>.<span class="pp">x</span> = <span class="nm">42</span>;
+<span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">a</span>.<span class="pp">x</span>);    <span class="cm">// still 999 ✅ — a is safe</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">typeof — Checking What Type Something Is</div>
+        <pre class="code solo"><span class="kw">typeof</span> <span class="st">"hello"</span>       <span class="cm">// "string"</span>
+<span class="kw">typeof</span> <span class="nm">42</span>            <span class="cm">// "number"</span>
+<span class="kw">typeof</span> <span class="bl">true</span>          <span class="cm">// "boolean"</span>
+<span class="kw">typeof</span> <span class="bl">undefined</span>     <span class="cm">// "undefined"</span>
+<span class="kw">typeof</span> <span class="bl">null</span>          <span class="cm">// "object" ← THE FAMOUS 29-YEAR-OLD BUG 🐛</span>
+<span class="kw">typeof</span> []            <span class="cm">// "object" ← arrays are objects in JS</span>
+<span class="kw">typeof</span> {}            <span class="cm">// "object"</span>
+<span class="kw">typeof</span> <span class="kw">function</span>(){} <span class="cm">// "function" ← special case</span>
+
+<span class="cm">// ✅ Proper null check:</span>
+<span class="vr">myVar</span> <span class="op">===</span> <span class="bl">null</span>
+
+<span class="cm">// ✅ Proper array check:</span>
+<span class="cl">Array</span>.<span class="fn">isArray</span>(<span class="vr">myArr</span>)   <span class="cm">// true</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Truthy & Falsy — The 6 Falsy Values</div>
+        <div class="c-text"><p>Every value in JS behaves as either truthy or falsy in a boolean context (like an <span class="hl-y">if</span> statement). Only 6 values are falsy — <strong>everything else is truthy</strong>, including empty arrays and empty objects.</p></div>
+        <pre class="code solo"><span class="cm">// THE ONLY 6 FALSY VALUES:</span>
+<span class="bl">false</span>         <span class="cm">// the boolean false</span>
+<span class="nm">0</span>             <span class="cm">// the number zero (also -0 and 0n)</span>
+<span class="st">""</span>            <span class="cm">// empty string</span>
+<span class="bl">null</span>          <span class="cm">// null</span>
+<span class="bl">undefined</span>     <span class="cm">// undefined</span>
+<span class="cl">NaN</span>           <span class="cm">// Not a Number</span>
+
+<span class="cm">// SURPRISING TRUTHY values (these catch people off-guard):</span>
+<span class="st">"0"</span>           <span class="cm">// truthy! it's a non-empty string</span>
+[]            <span class="cm">// truthy! empty array is truthy 😱</span>
+{}            <span class="cm">// truthy! empty object is truthy 😱</span>
+<span class="st">"false"</span>       <span class="cm">// truthy! the STRING "false" is not boolean false</span>
+
+<span class="cm">// Practical use — check if user typed something:</span>
+<span class="kw">let</span> <span class="vr">username</span> = <span class="st">""</span>;
+<span class="kw">if</span> (<span class="vr">username</span>) {
+  <span class="cm">// never runs — empty string is falsy</span>
+} <span class="kw">else</span> {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"Please enter your name!"</span>);  <span class="cm">// this runs ✅</span>
+}</pre>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-icon">💀</div>
+        <div class="callout-content">
+          <strong>The typeof null bug — explained</strong>
+          <p>In the first JS engine (1995), values had a type tag stored in their bits. Objects had tag <code>000</code>. <code>null</code> was stored as a null pointer — all zeros. So it accidentally got the object tag. A fix was proposed in 2012 but rejected because it would break millions of websites. So <code>typeof null === "object"</code> lives forever. 🪦</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CARD 3: OPERATORS ═══════════ -->
+<div class="topic-card">
+  <div class="card-top-bar" style="background:linear-gradient(90deg,var(--green),var(--cyan))"></div>
+  <div class="card-trigger" onclick="toggleCard(this)">
+    <div class="card-number">03</div>
+    <div class="card-emoji">➕</div>
+    <div class="card-info">
+      <div class="card-title">Operators in JavaScript</div>
+      <div class="card-subtitle">Arithmetic, comparison, logical, ternary — and the great == vs === war</div>
+    </div>
+    <div class="card-status cs-done">✓ LEARNED</div>
+    <div class="card-chevron">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-content">
+
+      <div class="c-section">
+        <div class="c-heading">Arithmetic Operators</div>
+        <pre class="code solo"><span class="kw">let</span> <span class="vr">a</span> = <span class="nm">10</span>, <span class="vr">b</span> = <span class="nm">3</span>;
+
+<span class="vr">a</span> <span class="op">+</span> <span class="vr">b</span>    <span class="cm">// 13  — addition</span>
+<span class="vr">a</span> <span class="op">-</span> <span class="vr">b</span>    <span class="cm">// 7   — subtraction</span>
+<span class="vr">a</span> <span class="op">*</span> <span class="vr">b</span>    <span class="cm">// 30  — multiplication</span>
+<span class="vr">a</span> <span class="op">/</span> <span class="vr">b</span>    <span class="cm">// 3.333... — always float in JS (no integer division)</span>
+<span class="vr">a</span> <span class="op">%</span> <span class="vr">b</span>    <span class="cm">// 1   — modulo: the REMAINDER after division</span>
+<span class="vr">a</span> <span class="op">**</span> <span class="vr">b</span>   <span class="cm">// 1000 — exponentiation (10 to the power of 3)</span>
+
+<span class="cm">// Shorthand operators:</span>
+<span class="vr">a</span> <span class="op">+=</span> <span class="nm">5</span>;   <span class="cm">// a = a + 5  → 15</span>
+<span class="vr">a</span> <span class="op">-=</span> <span class="nm">3</span>;   <span class="cm">// a = a - 3  → 12</span>
+<span class="vr">a</span><span class="op">++</span>;      <span class="cm">// a = a + 1  (returns OLD value first — post-increment)</span>
+<span class="op">++</span><span class="vr">a</span>;      <span class="cm">// a = a + 1  (returns NEW value first — pre-increment)</span>
+
+<span class="cm">// ⚠️ The classic string-number trap:</span>
+<span class="st">"5"</span> <span class="op">+</span> <span class="nm">3</span>    <span class="cm">// "53"  — + with string = concatenation!</span>
+<span class="st">"5"</span> <span class="op">-</span> <span class="nm">3</span>    <span class="cm">// 2    — minus forces number conversion</span>
+<span class="nm">5</span> <span class="op">+</span> <span class="nm">3</span> <span class="op">+</span> <span class="st">"1"</span>  <span class="cm">// "81" — 5+3=8 first, then 8+"1"="81"</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">== vs === — The Most Important Distinction in JS</div>
+        <div class="c-text">
+          <p><strong>== (loose equality)</strong> compares values after converting their types — leads to surprising results.<br><strong>=== (strict equality)</strong> compares value AND type — no conversion. <em>Always use this in real code.</em></p>
+        </div>
+        <table class="cmp-table">
+          <tr><th>Expression</th><th>== result</th><th>=== result</th><th>Why</th></tr>
+          <tr><td><code>1 == "1"</code></td><td class="g">true</td><td class="r">false</td><td>== converts "1" to number 1</td></tr>
+          <tr><td><code>0 == false</code></td><td class="g">true</td><td class="r">false</td><td>== converts false → 0</td></tr>
+          <tr><td><code>null == undefined</code></td><td class="g">true</td><td class="r">false</td><td>Special JS rule for these two</td></tr>
+          <tr><td><code>"" == false</code></td><td class="g">true</td><td class="r">false</td><td>Both convert to 0</td></tr>
+          <tr><td><code>[] == false</code></td><td class="g">true</td><td class="r">false</td><td>[] → "" → 0 → false</td></tr>
+          <tr><td><code>1 === 1</code></td><td class="g">true</td><td class="g">true</td><td>Same value AND type ✅</td></tr>
+        </table>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Logical Operators & Short-Circuit Evaluation</div>
+        <pre class="code solo"><span class="cm">// Basic logical operators</span>
+<span class="bl">true</span> <span class="op">&&</span> <span class="bl">true</span>    <span class="cm">// true  — AND: both must be truthy</span>
+<span class="bl">true</span> <span class="op">&&</span> <span class="bl">false</span>   <span class="cm">// false</span>
+<span class="bl">false</span> <span class="op">||</span> <span class="bl">true</span>   <span class="cm">// true  — OR: at least one must be truthy</span>
+<span class="op">!</span><span class="bl">true</span>           <span class="cm">// false — NOT: flips the boolean</span>
+<span class="op">!!</span><span class="st">"hello"</span>        <span class="cm">// true  — double-NOT converts anything to boolean</span>
+
+<span class="cm">// ✨ Short-circuit — returns actual VALUES, not just true/false:</span>
+<span class="bl">null</span> <span class="op">||</span> <span class="st">"Guest"</span>    <span class="cm">// "Guest"  — null is falsy, so || uses next value</span>
+<span class="st">"Ravi"</span> <span class="op">||</span> <span class="st">"Guest"</span>  <span class="cm">// "Ravi"   — "Ravi" is truthy, stops here</span>
+<span class="nm">0</span> <span class="op">??</span> <span class="st">"default"</span>     <span class="cm">// "default" — ?? only triggers for null/undefined</span>
+<span class="nm">0</span> <span class="op">||</span> <span class="st">"default"</span>     <span class="cm">// "default" — || triggers for all falsy (including 0!)</span>
+
+<span class="cm">// Real use: set a default value safely</span>
+<span class="kw">let</span> <span class="vr">user</span> = <span class="bl">null</span>;
+<span class="kw">let</span> <span class="vr">displayName</span> = <span class="vr">user</span> <span class="op">||</span> <span class="st">"Guest"</span>;     <span class="cm">// "Guest" ✅</span>
+<span class="kw">let</span> <span class="vr">email</span> = <span class="vr">user</span> <span class="op">&&</span> <span class="vr">user</span>.<span class="pp">email</span>;        <span class="cm">// null — no crash ✅</span>
+
+<span class="cm">// Ternary: condition ? if_true : if_false</span>
+<span class="kw">let</span> <span class="vr">age</span> = <span class="nm">20</span>;
+<span class="kw">let</span> <span class="vr">label</span> = <span class="vr">age</span> <span class="op">>=</span> <span class="nm">18</span> <span class="op">?</span> <span class="st">"Adult"</span> <span class="op">:</span> <span class="st">"Minor"</span>;   <span class="cm">// "Adult"</span></pre>
+      </div>
+
+      <div class="callout meme">
+        <div class="callout-icon">🫠</div>
+        <div class="callout-content">
+          <strong>Classic JS "WTF" hall of fame</strong>
+          <p><code>[] + []</code> → <code>""</code> &nbsp;|&nbsp; <code>[] + {}</code> → <code>"[object Object]"</code> &nbsp;|&nbsp; <code>{} + []</code> → <code>0</code> (curly braces parsed as empty block!) &nbsp;|&nbsp; <code>typeof NaN === "number"</code> → <code>true</code> &nbsp;|&nbsp; <code>[] == ![]</code> → <code>true</code>. None of these are bugs in your code. These are JavaScript features™.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CARD 4: MATH ═══════════ -->
+<div class="topic-card">
+  <div class="card-top-bar" style="background:linear-gradient(90deg,var(--orange),var(--yellow))"></div>
+  <div class="card-trigger" onclick="toggleCard(this)">
+    <div class="card-number">04</div>
+    <div class="card-emoji">🧮</div>
+    <div class="card-info">
+      <div class="card-title">Math Functions in JavaScript</div>
+      <div class="card-subtitle">The built-in Math object — your calculator, physicist, and dice-roller</div>
+    </div>
+    <div class="card-status cs-done">✓ LEARNED</div>
+    <div class="card-chevron">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-content">
+
+      <div class="c-section">
+        <div class="c-heading">What is the Math Object?</div>
+        <div class="c-text">
+          <p><span class="hl-y">Math</span> is a built-in global object (not a class — you can't do <span class="hl-r">new Math()</span>). It gives you mathematical constants and functions. Every method is accessed via <span class="hl-y">Math.methodName()</span>.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Rounding Methods — Know the Difference</div>
+        <pre class="code solo"><span class="cm">// round() — rounds to NEAREST integer (0.5 goes up)</span>
+<span class="cl">Math</span>.<span class="fn">round</span>(<span class="nm">4.5</span>)    <span class="cm">// 5</span>
+<span class="cl">Math</span>.<span class="fn">round</span>(<span class="nm">4.4</span>)    <span class="cm">// 4</span>
+<span class="cl">Math</span>.<span class="fn">round</span>(<span class="op">-</span><span class="nm">4.5</span>)   <span class="cm">// -4  ← watch out with negatives!</span>
+
+<span class="cm">// floor() — always rounds DOWN (like a floor)</span>
+<span class="cl">Math</span>.<span class="fn">floor</span>(<span class="nm">4.9</span>)    <span class="cm">// 4</span>
+<span class="cl">Math</span>.<span class="fn">floor</span>(<span class="op">-</span><span class="nm">4.1</span>)   <span class="cm">// -5  ← more negative for negatives</span>
+
+<span class="cm">// ceil() — always rounds UP (like a ceiling)</span>
+<span class="cl">Math</span>.<span class="fn">ceil</span>(<span class="nm">4.1</span>)     <span class="cm">// 5</span>
+<span class="cl">Math</span>.<span class="fn">ceil</span>(<span class="op">-</span><span class="nm">4.9</span>)    <span class="cm">// -4  ← less negative for negatives</span>
+
+<span class="cm">// trunc() — just cuts off the decimal, no rounding</span>
+<span class="cl">Math</span>.<span class="fn">trunc</span>(<span class="nm">4.9</span>)    <span class="cm">// 4</span>
+<span class="cl">Math</span>.<span class="fn">trunc</span>(<span class="op">-</span><span class="nm">4.9</span>)   <span class="cm">// -4  ← same behaviour for positives & negatives</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Power, Root, Min, Max, Absolute</div>
+        <pre class="code solo"><span class="cl">Math</span>.<span class="fn">pow</span>(<span class="nm">2</span>, <span class="nm">10</span>)      <span class="cm">// 1024 — 2 to the power of 10</span>
+<span class="cl">Math</span>.<span class="fn">sqrt</span>(<span class="nm">144</span>)       <span class="cm">// 12   — square root of 144</span>
+<span class="cl">Math</span>.<span class="fn">cbrt</span>(<span class="nm">27</span>)        <span class="cm">// 3    — cube root of 27</span>
+<span class="cl">Math</span>.<span class="fn">abs</span>(<span class="op">-</span><span class="nm">42</span>)        <span class="cm">// 42   — absolute value (removes sign)</span>
+<span class="cl">Math</span>.<span class="fn">max</span>(<span class="nm">1</span>, <span class="nm">9</span>, <span class="nm">3</span>, <span class="nm">7</span>)  <span class="cm">// 9    — biggest of all values</span>
+<span class="cl">Math</span>.<span class="fn">min</span>(<span class="nm">1</span>, <span class="nm">9</span>, <span class="nm">3</span>, <span class="nm">7</span>)  <span class="cm">// 1    — smallest of all values</span>
+<span class="cl">Math</span>.<span class="fn">sign</span>(<span class="op">-</span><span class="nm">5</span>)         <span class="cm">// -1   — returns -1, 0, or 1 based on sign</span>
+<span class="cl">Math</span>.<span class="pp">PI</span>              <span class="cm">// 3.141592653589793</span>
+<span class="cl">Math</span>.<span class="pp">E</span>               <span class="cm">// 2.718... (Euler's number)</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Random Numbers — The One Everyone Googles</div>
+        <pre class="code solo"><span class="cm">// Math.random() gives a float: 0 (inclusive) to 1 (exclusive)</span>
+<span class="cl">Math</span>.<span class="fn">random</span>()               <span class="cm">// 0.7392...  something random</span>
+
+<span class="cm">// ✅ Random integer from 0 to 9:</span>
+<span class="cl">Math</span>.<span class="fn">floor</span>(<span class="cl">Math</span>.<span class="fn">random</span>() * <span class="nm">10</span>)
+
+<span class="cm">// ✅ Random integer from 1 to 10:</span>
+<span class="cl">Math</span>.<span class="fn">floor</span>(<span class="cl">Math</span>.<span class="fn">random</span>() * <span class="nm">10</span>) + <span class="nm">1</span>
+
+<span class="cm">// ✅ Universal formula — random int from min to max (both inclusive):</span>
+<span class="kw">function</span> <span class="fn">randInt</span>(<span class="vr">min</span>, <span class="vr">max</span>) {
+  <span class="kw">return</span> <span class="cl">Math</span>.<span class="fn">floor</span>(<span class="cl">Math</span>.<span class="fn">random</span>() * (<span class="vr">max</span> - <span class="vr">min</span> + <span class="nm">1</span>)) + <span class="vr">min</span>;
+}
+<span class="fn">randInt</span>(<span class="nm">1</span>, <span class="nm">6</span>)     <span class="cm">// 🎲 dice roll</span>
+<span class="fn">randInt</span>(<span class="nm">1</span>, <span class="nm">100</span>)  <span class="cm">// random percentage</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Floating Point Precision Bug</div>
+        <pre class="code solo"><span class="cm">// ⚠️ The famous floating point problem:</span>
+<span class="nm">0.1</span> + <span class="nm">0.2</span>              <span class="cm">// 0.30000000000000004  😭</span>
+<span class="nm">0.1</span> + <span class="nm">0.2</span> === <span class="nm">0.3</span>     <span class="cm">// false! 💀</span>
+
+<span class="cm">// ✅ Fix for display — toFixed() (returns a string):</span>
+(<span class="nm">0.1</span> + <span class="nm">0.2</span>).<span class="fn">toFixed</span>(<span class="nm">2</span>)   <span class="cm">// "0.30"</span>
+
+<span class="cm">// ✅ Fix for money — multiply to integers first:</span>
+(<span class="nm">0.1</span> * <span class="nm">10</span> + <span class="nm">0.2</span> * <span class="nm">10</span>) / <span class="nm">10</span>   <span class="cm">// 0.3 ✅</span></pre>
+      </div>
+
+      <div class="callout meme">
+        <div class="callout-icon">🎲</div>
+        <div class="callout-content">
+          <strong>The universal developer experience</strong>
+          <p>Every junior developer writes their own <code>randInt(min, max)</code>, feels like a genius, shows it to a senior, and the senior Googles the same formula to double-check. This has happened approximately 11 million times. The formula is <code>Math.floor(Math.random() * (max - min + 1)) + min</code>. Tattoo it somewhere accessible.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CARD 5: STRINGS ═══════════ -->
+<div class="topic-card">
+  <div class="card-top-bar" style="background:linear-gradient(90deg,var(--purple),var(--pink))"></div>
+  <div class="card-trigger" onclick="toggleCard(this)">
+    <div class="card-number">05</div>
+    <div class="card-emoji">🔤</div>
+    <div class="card-info">
+      <div class="card-title">Basics of Strings</div>
+      <div class="card-subtitle">How to create, access, and manipulate text in JavaScript</div>
+    </div>
+    <div class="card-status cs-done">✓ LEARNED</div>
+    <div class="card-chevron">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-content">
+
+      <div class="c-section">
+        <div class="c-heading">Creating Strings — 3 Ways</div>
+        <pre class="code solo"><span class="kw">let</span> <span class="vr">s1</span> = <span class="st">'Single quotes'</span>;          <span class="cm">// use when string has "double quotes" inside</span>
+<span class="kw">let</span> <span class="vr">s2</span> = <span class="st">"Double quotes"</span>;          <span class="cm">// use when string has apostrophes like I'm</span>
+<span class="kw">let</span> <span class="vr">s3</span> = <span class="st">`Template literals`</span>;      <span class="cm">// the modern way — most flexible, prefer this</span>
+
+<span class="cm">// Template literals are special — they support expressions:</span>
+<span class="kw">let</span> <span class="vr">name</span> = <span class="st">"Ravi"</span>, <span class="vr">age</span> = <span class="nm">21</span>;
+<span class="st">`Hello ${<span class="vr">name</span>}, you are ${<span class="vr">age</span>} years old!`</span>
+<span class="st">`2 + 2 = ${<span class="nm">2</span> + <span class="nm">2</span>}`</span>                          <span class="cm">// "2 + 2 = 4"</span>
+<span class="st">`Status: ${<span class="vr">age</span> >= <span class="nm">18</span> ? "adult" : "minor"}`</span>  <span class="cm">// ternary inside!</span>
+
+<span class="cm">// Multiline — only backticks allow this without tricks:</span>
+<span class="kw">let</span> <span class="vr">poem</span> = <span class="st">`Roses are red,
+Violets are blue,
+JavaScript is weird,
+And I love it too.`</span>;</pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">String Properties & Indexing</div>
+        <pre class="code solo"><span class="kw">let</span> <span class="vr">str</span> = <span class="st">"JavaScript"</span>;   <span class="cm">// J(0) a(1) v(2) a(3) S(4) c(5) r(6) i(7) p(8) t(9)</span>
+
+<span class="vr">str</span>.<span class="pp">length</span>       <span class="cm">// 10 — number of characters</span>
+<span class="vr">str</span>[<span class="nm">0</span>]           <span class="cm">// "J" — first character (zero-indexed!)</span>
+<span class="vr">str</span>[<span class="nm">9</span>]           <span class="cm">// "t" — last character (length - 1)</span>
+<span class="vr">str</span>.<span class="fn">at</span>(<span class="op">-</span><span class="nm">1</span>)       <span class="cm">// "t" — .at() supports negative indices (modern)</span>
+<span class="vr">str</span>.<span class="fn">at</span>(<span class="op">-</span><span class="nm">3</span>)       <span class="cm">// "i" — 3rd from end</span>
+
+<span class="cm">// ⚠️ Strings are immutable — you can't change individual characters</span>
+<span class="vr">str</span>[<span class="nm">0</span>] = <span class="st">"j"</span>;    <span class="cm">// silently fails! str is still "JavaScript"</span>
+<span class="cm">// To "change" a string, create a new one:</span>
+<span class="vr">str</span> = <span class="st">"j"</span> + <span class="vr">str</span>.<span class="fn">slice</span>(<span class="nm">1</span>);   <span class="cm">// "javaScript"</span></pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">Essential String Methods</div>
+        <pre class="code solo"><span class="cm">// ── CASE ──────────────────────────────────</span>
+<span class="st">"hello"</span>.<span class="fn">toUpperCase</span>()          <span class="cm">// "HELLO"</span>
+<span class="st">"WORLD"</span>.<span class="fn">toLowerCase</span>()          <span class="cm">// "world"</span>
+
+<span class="cm">// ── TRIMMING (removing whitespace) ────────</span>
+<span class="st">"  hello  "</span>.<span class="fn">trim</span>()            <span class="cm">// "hello" — removes both ends</span>
+<span class="st">"  hello  "</span>.<span class="fn">trimStart</span>()       <span class="cm">// "hello  " — only left side</span>
+<span class="st">"  hello  "</span>.<span class="fn">trimEnd</span>()         <span class="cm">// "  hello" — only right side</span>
+
+<span class="cm">// ── SEARCHING ─────────────────────────────</span>
+<span class="st">"banana"</span>.<span class="fn">includes</span>(<span class="st">"an"</span>)        <span class="cm">// true — is "an" inside "banana"?</span>
+<span class="st">"banana"</span>.<span class="fn">startsWith</span>(<span class="st">"ba"</span>)     <span class="cm">// true</span>
+<span class="st">"banana"</span>.<span class="fn">endsWith</span>(<span class="st">"na"</span>)       <span class="cm">// true</span>
+<span class="st">"banana"</span>.<span class="fn">indexOf</span>(<span class="st">"a"</span>)         <span class="cm">// 1  — first position (returns -1 if not found)</span>
+<span class="st">"banana"</span>.<span class="fn">lastIndexOf</span>(<span class="st">"a"</span>)     <span class="cm">// 5  — last position</span>
+
+<span class="cm">// ── EXTRACTING ────────────────────────────</span>
+<span class="st">"JavaScript"</span>.<span class="fn">slice</span>(<span class="nm">0</span>, <span class="nm">4</span>)      <span class="cm">// "Java"  — chars at index 0, 1, 2, 3</span>
+<span class="st">"JavaScript"</span>.<span class="fn">slice</span>(<span class="nm">4</span>)          <span class="cm">// "Script" — from index 4 to end</span>
+<span class="st">"JavaScript"</span>.<span class="fn">slice</span>(<span class="op">-</span><span class="nm">6</span>)         <span class="cm">// "Script" — last 6 characters</span>
+
+<span class="cm">// ── REPLACING ─────────────────────────────</span>
+<span class="st">"hello world"</span>.<span class="fn">replace</span>(<span class="st">"world"</span>, <span class="st">"JS"</span>)      <span class="cm">// "hello JS" — first only</span>
+<span class="st">"aababab"</span>.<span class="fn">replaceAll</span>(<span class="st">"ab"</span>, <span class="st">"X"</span>)           <span class="cm">// "aXXX" — all matches</span>
+
+<span class="cm">// ── SPLITTING ─────────────────────────────</span>
+<span class="st">"a,b,c"</span>.<span class="fn">split</span>(<span class="st">","</span>)              <span class="cm">// ["a","b","c"] — string → array</span>
+<span class="st">"hello"</span>.<span class="fn">split</span>(<span class="st">""</span>)               <span class="cm">// ["h","e","l","l","o"]</span>
+[<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>].<span class="fn">join</span>(<span class="st">"-"</span>)         <span class="cm">// "a-b-c" — reverse of split</span>
+
+<span class="cm">// ── PADDING & REPEATING ───────────────────</span>
+<span class="st">"5"</span>.<span class="fn">padStart</span>(<span class="nm">3</span>, <span class="st">"0"</span>)           <span class="cm">// "005" — useful for timestamps, IDs</span>
+<span class="st">"ha"</span>.<span class="fn">repeat</span>(<span class="nm">3</span>)                 <span class="cm">// "hahaha"</span></pre>
+      </div>
+
+      <div class="callout insight">
+        <div class="callout-icon">⛓️</div>
+        <div class="callout-content">
+          <strong>Method chaining — the clean way</strong>
+          <p>String methods return new strings, so you can chain them in one line: <code>"  HELLO WORLD  ".trim().toLowerCase().replace("world", "JS")</code> → <code>"hello JS"</code>. No temp variables. Reads left-to-right like instructions. Senior devs do this constantly.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CARD 6: IF-ELSE & LOOPS ═══════════ -->
+<div class="topic-card">
+  <div class="card-top-bar" style="background:linear-gradient(90deg,var(--green),var(--yellow))"></div>
+  <div class="card-trigger" onclick="toggleCard(this)">
+    <div class="card-number">06</div>
+    <div class="card-emoji">🔁</div>
+    <div class="card-info">
+      <div class="card-title">If-Else & Loops</div>
+      <div class="card-subtitle">Control flow — making decisions and repeating things</div>
+    </div>
+    <div class="card-status cs-done">✓ LEARNED</div>
+    <div class="card-chevron">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-content">
+
+      <div class="c-section">
+        <div class="c-heading">If / Else If / Else</div>
+        <pre class="code solo"><span class="kw">let</span> <span class="vr">score</span> = <span class="nm">78</span>;
+
+<span class="kw">if</span> (<span class="vr">score</span> >= <span class="nm">90</span>) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"A — Legend 🏆"</span>);
+} <span class="kw">else if</span> (<span class="vr">score</span> >= <span class="nm">80</span>) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"B — Solid work! 💪"</span>);
+} <span class="kw">else if</span> (<span class="vr">score</span> >= <span class="nm">70</span>) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"C — Decent, room to grow 😅"</span>);    <span class="cm">// ← this runs</span>
+} <span class="kw">else</span> {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"Open the textbook 📚"</span>);
+}
+
+<span class="cm">// Switch — cleaner when checking one variable against many exact values</span>
+<span class="kw">let</span> <span class="vr">day</span> = <span class="st">"Monday"</span>;
+<span class="kw">switch</span> (<span class="vr">day</span>) {
+  <span class="kw">case</span> <span class="st">"Monday"</span>:
+    <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"Ugh, Mondays 😭"</span>);
+    <span class="kw">break</span>;    <span class="cm">// ⚠️ ALWAYS add break — without it, falls to next case!</span>
+  <span class="kw">case</span> <span class="st">"Saturday"</span>:
+  <span class="kw">case</span> <span class="st">"Sunday"</span>:     <span class="cm">// two cases, one outcome</span>
+    <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"Weekend! Sleep 😴"</span>);
+    <span class="kw">break</span>;
+  <span class="kw">default</span>:
+    <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">"Midweek grind 😤"</span>);
+}</pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">For Loop — When You Know the Count</div>
+        <pre class="code solo"><span class="cm">// Structure: for (initialise; condition; update)</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">i</span> = <span class="nm">0</span>; <span class="vr">i</span> < <span class="nm">5</span>; <span class="vr">i</span>++) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">`Round ${<span class="vr">i</span> + <span class="nm">1</span>}`</span>);    <span class="cm">// Round 1, 2, 3, 4, 5</span>
+}
+
+<span class="cm">// Count backwards</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">i</span> = <span class="nm">5</span>; <span class="vr">i</span> >= <span class="nm">1</span>; <span class="vr">i</span>--) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">i</span>);  <span class="cm">// 5, 4, 3, 2, 1</span>
+}
+
+<span class="cm">// Loop over an array</span>
+<span class="kw">let</span> <span class="vr">fruits</span> = [<span class="st">"apple"</span>, <span class="st">"mango"</span>, <span class="st">"banana"</span>];
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">i</span> = <span class="nm">0</span>; <span class="vr">i</span> < <span class="vr">fruits</span>.<span class="pp">length</span>; <span class="vr">i</span>++) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">fruits</span>[<span class="vr">i</span>]);
+}
+
+<span class="cm">// for...of — cleaner way to loop arrays (modern)</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">fruit</span> <span class="kw">of</span> <span class="vr">fruits</span>) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">fruit</span>);   <span class="cm">// apple, mango, banana</span>
+}
+
+<span class="cm">// for...in — loops over object KEYS</span>
+<span class="kw">let</span> <span class="vr">person</span> = { <span class="pp">name</span>: <span class="st">"Ravi"</span>, <span class="pp">age</span>: <span class="nm">21</span> };
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">key</span> <span class="kw">in</span> <span class="vr">person</span>) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">`${<span class="vr">key</span>}: ${<span class="vr">person</span>[<span class="vr">key</span>]}`</span>);   <span class="cm">// name: Ravi, age: 21</span>
+}</pre>
+      </div>
+
+      <div class="c-section">
+        <div class="c-heading">While & Do-While Loops</div>
+        <pre class="code solo"><span class="cm">// while — checks condition BEFORE running body</span>
+<span class="kw">let</span> <span class="vr">bugs</span> = <span class="nm">5</span>;
+<span class="kw">while</span> (<span class="vr">bugs</span> > <span class="nm">0</span>) {
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="st">`Fixing bug #${<span class="vr">bugs</span>} 🐛`</span>);
+  <span class="vr">bugs</span>--;
+}
+
+<span class="cm">// do...while — runs the body ONCE before checking condition</span>
+<span class="kw">let</span> <span class="vr">password</span>;
+<span class="kw">do</span> {
+  <span class="vr">password</span> = <span class="fn">prompt</span>(<span class="st">"Enter password (min 8 chars):"</span>);
+} <span class="kw">while</span> (<span class="vr">password</span>.<span class="pp">length</span> < <span class="nm">8</span>);   <span class="cm">// keeps asking until valid</span>
+
+<span class="cm">// break — exit the loop early</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">i</span> = <span class="nm">0</span>; <span class="vr">i</span> < <span class="nm">100</span>; <span class="vr">i</span>++) {
+  <span class="kw">if</span> (<span class="vr">i</span> === <span class="nm">5</span>) <span class="kw">break</span>;   <span class="cm">// exits at 5, never reaches 100</span>
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">i</span>);        <span class="cm">// 0, 1, 2, 3, 4</span>
+}
+
+<span class="cm">// continue — skip this iteration, go to next</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="vr">i</span> = <span class="nm">0</span>; <span class="vr">i</span> < <span class="nm">6</span>; <span class="vr">i</span>++) {
+  <span class="kw">if</span> (<span class="vr">i</span> % <span class="nm">2</span> === <span class="nm">0</span>) <span class="kw">continue</span>;   <span class="cm">// skip even numbers</span>
+  <span class="vr">console</span>.<span class="fn">log</span>(<span class="vr">i</span>);               <span class="cm">// 1, 3, 5</span>
+}</pre>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-icon">☠️</div>
+        <div class="callout-content">
+          <strong>The infinite loop — every developer's jump scare</strong>
+          <p><code>while (true) { console.log("I am eternal") }</code> — This will freeze your browser tab completely. The only fix is force-closing the tab. You WILL experience this. When it happens: close the tab, take a breath, laugh, and check your loop exit condition. It's a universal rite of passage.</p>
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-icon">🧠</div>
+        <div class="callout-content">
+          <strong>Which loop should I use?</strong>
+          <p>Know the exact count? → <code>for</code>. Don't know the count? → <code>while</code>. Need to run at least once? → <code>do...while</code>. Iterating over array values? → <code>for...of</code>. Iterating over object keys? → <code>for...in</code>. Want cleaner functional style? → <code>map/filter/reduce</code> (coming soon!).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ LOCKED CARDS ═══════════ -->
+
+<div class="topic-card locked">
+  <div class="card-top-bar" style="background:var(--dim)"></div>
+  <div class="card-trigger locked-trigger">
+    <div class="card-number">07</div>
+    <div class="card-emoji">📦</div>
+    <div class="card-info">
+      <div class="card-title">Arrays & Objects</div>
+      <div class="card-subtitle">Ordered lists + key-value stores — the backbone of all JS data structures</div>
+    </div>
+    <div class="card-status cs-lock">🔒 COMING SOON</div>
+  </div>
+  <div class="coming-soon">
+    <div class="coming-big">🔒</div>
+    <div class="coming-h">// section not yet unlocked</div>
+    <div class="coming-p">Arrays store ordered lists. Objects store key-value pairs. Together they are the backbone of every JS application. Topics: array methods, destructuring, spread operator, nested structures, JSON parsing. Content drops once the topic is fully learned.</div>
+    <div class="coming-pill">⏳ In learning queue</div>
+  </div>
+</div>
+
+<div class="topic-card locked">
+  <div class="card-top-bar" style="background:var(--dim)"></div>
+  <div class="card-trigger locked-trigger">
+    <div class="card-number">08</div>
+    <div class="card-emoji">🔄</div>
+    <div class="card-info">
+      <div class="card-title">Advanced Loops — map, filter, reduce</div>
+      <div class="card-subtitle">forEach, map, filter, reduce, find, every, some — the functional programming toolkit</div>
+    </div>
+    <div class="card-status cs-lock">🔒 COMING SOON</div>
+  </div>
+  <div class="coming-soon">
+    <div class="coming-big">🔒</div>
+    <div class="coming-h">// section not yet unlocked</div>
+    <div class="coming-p">These 4 methods — <code>map</code>, <code>filter</code>, <code>reduce</code>, <code>forEach</code> — will replace 90% of your for-loops and make code cleaner and more expressive. Unlocks after Arrays & Objects.</div>
+    <div class="coming-pill">⏳ After Arrays</div>
+  </div>
+</div>
+
+<div class="topic-card locked">
+  <div class="card-top-bar" style="background:var(--dim)"></div>
+  <div class="card-trigger locked-trigger">
+    <div class="card-number">09</div>
+    <div class="card-emoji">🧵</div>
+    <div class="card-info">
+      <div class="card-title">Advanced Strings & Regex</div>
+      <div class="card-subtitle">Regular expressions, matchAll, replaceAll — pattern matching the deep way</div>
+    </div>
+    <div class="card-status cs-lock">🔒 COMING SOON</div>
+  </div>
+  <div class="coming-soon">
+    <div class="coming-big">🔒</div>
+    <div class="coming-h">// section not yet unlocked</div>
+    <div class="coming-p">Regex is a mini-language inside JavaScript. Scary at first, then incredibly powerful. Email validation, phone number parsing, pattern extraction, URL matching — all covered with real-world examples.</div>
+    <div class="coming-pill">⏳ Coming soon</div>
+  </div>
+</div>
+
+<div class="topic-card locked">
+  <div class="card-top-bar" style="background:var(--dim)"></div>
+  <div class="card-trigger locked-trigger">
+    <div class="card-number">10</div>
+    <div class="card-emoji">🖱️</div>
+    <div class="card-info">
+      <div class="card-title">Events & DOM Manipulation</div>
+      <div class="card-subtitle">querySelector, addEventListener, event bubbling, delegation — making pages respond</div>
+    </div>
+    <div class="card-status cs-lock">🔒 COMING SOON</div>
+  </div>
+  <div class="coming-soon">
+    <div class="coming-big">🔒</div>
+    <div class="coming-h">// section not yet unlocked</div>
+    <div class="coming-p">The DOM connects JavaScript to HTML. Events connect JS to the user. This section is where code starts doing things you can actually see on screen — the most satisfying chapter of learning JS.</div>
+    <div class="coming-pill">⏳ The fun part 🎮</div>
+  </div>
+</div>
+
+<div class="topic-card locked">
+  <div class="card-top-bar" style="background:var(--dim)"></div>
+  <div class="card-trigger locked-trigger">
+    <div class="card-number">11</div>
+    <div class="card-emoji">⏰</div>
+    <div class="card-info">
+      <div class="card-title">Async JS — Promises, Async/Await, Event Loop</div>
+      <div class="card-subtitle">The hardest concept in JS. Also the most important one. No shortcuts.</div>
+    </div>
+    <div class="card-status cs-lock">🔒 COMING SOON</div>
+  </div>
+  <div class="coming-soon">
+    <div class="coming-big">🔒</div>
+    <div class="coming-h">// the final boss 🐉</div>
+    <div class="coming-p">Callbacks, Promises, async/await, the call stack, the event loop, microtask vs macrotask queue. This is what separates junior devs from mid-level. Will be covered deeply with visual diagrams and real fetch() API examples. Pray for me.</div>
+    <div class="coming-pill">⏳ When my brain is ready 🙏</div>
+  </div>
+</div>
+
+  </div><!-- end topics-section -->
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="position:relative;z-index:2;padding:6rem 0 4rem">
+  <div style="max-width:680px;margin:0 auto;padding:0 2rem">
+    <div class="section-eyebrow">// about.md</div>
+    <h2 class="section-h2">THE STORY</h2>
+    <p class="c-text" style="font-size:0.95rem;max-width:100%">
+      <p>This is a <strong>hackathon project</strong> — a live, evolving journal of my JavaScript learning journey. I'm documenting everything as I understand it. No topic goes live until I can explain it clearly, with examples that actually make sense.</p>
+      <p>Every section will get richer as I keep learning. If something seems wrong, it's because I'm still figuring it out — not because I was lazy. Honesty over polish.</p>
+      <p>Goal: make JavaScript feel less like homework and more like a superpower. Because it genuinely is one.</p>
+    </p>
+    <div style="margin-top:1.5rem;font-family:var(--mono);font-size:0.75rem;color:var(--dim);line-height:2">
+      <div><span style="color:var(--yellow)">$</span> stack: HTML · CSS · Vanilla JS · Caffeine</div>
+      <div><span style="color:var(--yellow)">$</span> updated: continuously as learning progresses</div>
+      <div><span style="color:var(--yellow)">$</span> type: hackathon project · v1.0<span class="blinker" style="margin-left:4px;width:6px;height:12px"></span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>JSVERSE</span> · built during a hackathon · keep shipping 🚀
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
